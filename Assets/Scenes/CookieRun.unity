@@ -148,15 +148,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4fa8aa1c2101545916f33082792d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPlatform
-  platformPrfaps:
-  - {fileID: 4960964680492020123, guid: 6eb98dbb7721135488e79702efd63dbd, type: 3}
-  - {fileID: 9040299246990265454, guid: 600344b23616e4a4c90eaefb9780a164, type: 3}
-  - {fileID: 2867514483194963531, guid: 7799a34e9026ba34eb6a325eafbb9eb3, type: 3}
-  - {fileID: 4760929561846587057, guid: d7ec6142781951347b3d7f12d4357d6f, type: 3}
+  platformPrfaps: []
   count: 4
   width: 8
+  maxWidth: 15
   ypos: -1
-  xPos: 1
+  xPos: 8
 --- !u!4 &167549917
 Transform:
   m_ObjectHideFlags: 0
