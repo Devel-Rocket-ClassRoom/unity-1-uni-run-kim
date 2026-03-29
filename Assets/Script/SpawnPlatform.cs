@@ -13,7 +13,7 @@ public class SpawnPlatform : MonoBehaviour
     public int poolCount = 8;
     public float moveSpeed = 7f; // 속도를 조금 올렸습니다.
     public float platformWidth = 10f; // 플랫폼 길이를 조금 더 여유있게 설정 권장
-    public float yPos = -2f;
+    public float yPos = -3f;
     public float spawnX = 15f;
     public float despawnX = -15f;
     public float minGap = 1.0f;
@@ -151,7 +151,7 @@ public class SpawnPlatform : MonoBehaviour
         if (prefabs == null || prefabs.Length == 0) return;
 
         // 장애물 높이 설정 (0: 바닥, 1: 공중)
-        float obsY = (type == 0) ? 0.7f : 2.5f;
+        float obsY = (type == 0) ? 0.7f : 2f;
         GameObject obs = GetSubObject(prefabs[Random.Range(0, prefabs.Length)], parent);
         obs.transform.localPosition = new Vector2(0, obsY);
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
@@ -7,11 +8,12 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("UI 연결")]
+    public Image hpFillImage;        // HP_Fill 이미지를 여기에 드래그
     public GameObject gameOverPanel;
-    public TextMeshProUGUI scoreText;        // 게임 중 상단에 뜨는 점수
-    public TextMeshProUGUI finalScoreText;   // 게임오버 창에 뜨는 최종 점수
+    public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI finalScoreText;
 
-    [Header("체력 수치 설정")]
+    [Header("체력 설정")]
     public float maxHp = 100f;
     public float hpDeclineSpeed = 5f;
 
@@ -28,14 +30,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currentHp = maxHp;
-
-        if (gameOverPanel != null)
-            gameOverPanel.SetActive(false);
-
-        // 게임 시작 시 점수 UI 보이기
-        if (scoreText != null)
-            scoreText.gameObject.SetActive(true);
-
+        if (gameOverPanel != null) gameOverPanel.SetActive(false);
         Time.timeScale = 1f;
     }
 
@@ -47,11 +42,18 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        // 1. 체력 자연 감소 및 UI 반영
         currentHp -= hpDeclineSpeed * Time.deltaTime;
+        if (hpFillImage != null)
+        {
+            hpFillImage.fillAmount = currentHp / maxHp; // 비율 계산 (0~1)
+        }
 
+        // 2. 점수 업데이트
         if (scoreText != null)
             scoreText.text = "Score: " + Mathf.FloorToInt(score);
 
+        // 3. 사망 체크
         if (currentHp <= 0)
         {
             currentHp = 0;
@@ -59,44 +61,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AddScore(int amount)
-    {
-        if (isGameOver) return;
-        score += amount;
-    }
-
-    public void RestoreHp(float amount)
-    {
-        if (isGameOver) return;
-        currentHp = Mathf.Min(currentHp + amount, maxHp);
-    }
-
-    public void TakeDamage(float amount)
-    {
-        if (isGameOver) return;
-        currentHp -= amount;
-        if (currentHp <= 0) GameOver();
-    }
+    public void AddScore(int amount) { if (!isGameOver) score += amount; }
+    public void RestoreHp(float amount) { if (!isGameOver) currentHp = Mathf.Min(currentHp + amount, maxHp); }
+    public void TakeDamage(float amount) { if (!isGameOver) currentHp -= amount; }
 
     public void GameOver()
     {
         if (isGameOver) return;
         isGameOver = true;
 
-        // 1. 플레이어 죽음 처리
         PlayerController player = FindFirstObjectByType<PlayerController>();
         if (player != null) player.Die();
 
-        // 2. 현재 점수 UI 숨기기 (핵심 수정 부분)
-        if (scoreText != null)
-            scoreText.gameObject.SetActive(false);
-
-        // 3. 게임오버 패널 띄우기 및 최종 점수 입력
-        if (gameOverPanel != null)
-            gameOverPanel.SetActive(true);
-
-        if (finalScoreText != null)
-            finalScoreText.text = "Final Score : " + Mathf.FloorToInt(score);
+        if (scoreText != null) scoreText.gameObject.SetActive(false);
+        if (gameOverPanel != null) gameOverPanel.SetActive(true);
+        if (finalScoreText != null) finalScoreText.text = "Final Score : " + Mathf.FloorToInt(score);
 
         Time.timeScale = 0f;
     }
