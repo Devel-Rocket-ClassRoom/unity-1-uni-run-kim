@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9095742104686798898}
-  - component: {fileID: 6121171598466028322}
   m_Layer: 0
   m_Name: Slide
   m_TagString: Untagged
@@ -37,19 +36,6 @@ Transform:
   - {fileID: 5746501610133389434}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6121171598466028322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4760929561846587057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fce4b84758e81e240aa7e85d1a09499b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ScrollingObject
-  speed: 5
 --- !u!1001 &509251013050500204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61,6 +47,10 @@ PrefabInstance:
     - target: {fileID: 7473224037357705972, guid: 2b024e345f37aba4386df2506c72d038, type: 3}
       propertyPath: m_Name
       value: SlicePlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 7473224037357705972, guid: 2b024e345f37aba4386df2506c72d038, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     - target: {fileID: 8471060803049319769, guid: 2b024e345f37aba4386df2506c72d038, type: 3}
       propertyPath: m_LocalPosition.x

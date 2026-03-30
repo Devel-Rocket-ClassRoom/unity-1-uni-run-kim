@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7469599794769933189}
   - component: {fileID: 621144105033877919}
   - component: {fileID: 7750953263862343553}
+  - component: {fileID: -4596490348391453565}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Coin
@@ -151,3 +152,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-4596490348391453565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5811296117014471346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c613bd7aa25c63d41bfe185350e5225e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScrollObject
+  speed: 5

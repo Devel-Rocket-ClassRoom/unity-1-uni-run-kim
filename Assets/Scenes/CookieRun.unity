@@ -252,6 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4fa8aa1c2101545916f33082792d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnPlatform
+<<<<<<< HEAD
   platformPrefab: {fileID: 5005032016073436249, guid: 2d13d6139826b384786628f4ee226a19, type: 3}
   coinPrefab: {fileID: 5811296117014471346, guid: 595585dbe749af54f9b10c426eabdb42, type: 3}
   groundObstaclePrefabs:
@@ -268,6 +269,22 @@ MonoBehaviour:
   despawnX: -12
   minGap: 1
   maxGap: 3
+=======
+  platformPrfaps:
+  - {fileID: 4960964680492020123, guid: 6eb98dbb7721135488e79702efd63dbd, type: 3}
+  - {fileID: 9040299246990265454, guid: 600344b23616e4a4c90eaefb9780a164, type: 3}
+  - {fileID: 2867514483194963531, guid: 7799a34e9026ba34eb6a325eafbb9eb3, type: 3}
+  - {fileID: 4760929561846587057, guid: d7ec6142781951347b3d7f12d4357d6f, type: 3}
+  - {fileID: 5005032016073436249, guid: 2d13d6139826b384786628f4ee226a19, type: 3}
+  - {fileID: 4940939435266178027, guid: caae5a2d7e2197744bb04e08a45efe66, type: 3}
+  - {fileID: 7158179046460824885, guid: 56bd5d0410b919d4db11fb356150ae72, type: 3}
+  - {fileID: 7473224037357705972, guid: 2b024e345f37aba4386df2506c72d038, type: 3}
+  count: 8
+  width: 8
+  maxWidth: 16
+  ypos: -1
+  startX: 0
+>>>>>>> fe4fb878346be5dff825df8019e46c8e60b5ee38
 --- !u!4 &167549917
 Transform:
   m_ObjectHideFlags: 0
@@ -1016,6 +1033,7 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+<<<<<<< HEAD
 --- !u!1 &1159316194
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,6 +1113,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> fe4fb878346be5dff825df8019e46c8e60b5ee38
 --- !u!1 &1296121499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,6 +1313,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &1534327214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1723,6 +1744,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c3c39fa9224e64a9203d143950a6c2, type: 3}
+=======
+>>>>>>> fe4fb878346be5dff825df8019e46c8e60b5ee38
 --- !u!1 &1878748912
 GameObject:
   m_ObjectHideFlags: 0
@@ -1998,7 +2021,10 @@ SceneRoots:
   - {fileID: 1534327213}
   - {fileID: 413408268}
   - {fileID: 167549917}
+<<<<<<< HEAD
   - {fileID: 1861690848}
   - {fileID: 1132978811}
   - {fileID: 1159316197}
   - {fileID: 2260025}
+=======
+>>>>>>> fe4fb878346be5dff825df8019e46c8e60b5ee38
